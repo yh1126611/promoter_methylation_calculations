@@ -1,5 +1,7 @@
 library(ggplot2)
 library(scales)
+library(data.table)
+library(dplyr)
 
 # Nature figure theme (linewidth=0.25 per Nature guidelines)
 nature_theme <- theme(
