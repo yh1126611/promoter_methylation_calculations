@@ -16,7 +16,7 @@ No installation required. Grant execution permission by `chmod +x bed_2_tbtools.
 ## Demo
 Find demo input under bed_2_tbtoos/CG.bed (All CpG sites of hs1 chromosome 1). Run script by `python3 bed_2_tbtools.py`. Enter input (`CG.bed`) and output (`CG.BINstat.tab.xls`) filenames when prompted. A file summarizing the length of region occupied by the BED file in every 10,000 bp window of the genome is expected. <10 min. runtime is expected.
 ## Instructions for use
-Run script while inputting your BED file at prompt. The output is compatible as input for visualization as a circos plot track in TBtools ([Chen et al., 2023](https://www.cell.com/molecular-plant/fulltext/S1674-2052(23)00281-2))
+Run script while inputting your BED file at prompt. The output is compatible as input for visualization as a circos plot track in [TBtools](https://github.com/CJ-Chen/TBtools-II) ([Chen et al., 2023](https://www.cell.com/molecular-plant/fulltext/S1674-2052(23)00281-2))
 
 # 3. [intro.R](./intro/intro.R)
 ## System requirement
@@ -32,7 +32,7 @@ e.g.
 ```
 df=read.table("Fig1b.tsv")
 ```
-and prompting the block. A visualization of figure in the format of Fig. 1b-g of paper ([Lee et al., 2026](https://www.biorxiv.org/content/10.64898/2026.03.29.715150v1)) is expected. Less than 5 minute run time expected for each block.
+and prompting the block. A visualization of figure in the format of **Fig. 1b-g** of paper ([Lee et al., 2026](https://www.biorxiv.org/content/10.64898/2026.03.29.715150v1)) is expected. Less than 5 minute run time expected for each block.
 ## Instructions for use
 Import your data via
 ```
@@ -53,7 +53,7 @@ processed_data <- preprocess_data("MP_TSS_hg38.tsv")
 tss_plot <- create_tss_plot(processed_data)
 print(tss_plot)
 ```
-A line plot of an average MP profile at TSS as in format of Fig. 2 of study ([Lee et al., 2026](https://www.biorxiv.org/content/10.64898/2026.03.29.715150v1.full)) is expected. <5 min. runtime is expected.
+A line plot of an average MP profile at TSS as in format of **Fig. 2** of study ([Lee et al., 2026](https://www.biorxiv.org/content/10.64898/2026.03.29.715150v1.full)) is expected. <5 min. runtime is expected.
 ## Instructions for use
 Prepare a tab-delimited file with columns indicating information on I. Vicinal TSS ID, II. Distance from TSS, III. MP and IV. Strand (+/-) for every row corresponding to a CpG. Input the file through the aforementioned pipeline:
 ```
@@ -93,7 +93,7 @@ Run function with input via
 ```
 plot_pvalue_heatmap(df, "Title")
 ```
-A horizontally linear heatmap indicating p-value at each distance through color intensity as in Fig. 2 of ([Lee et al. 2026](https://www.biorxiv.org/content/10.64898/2026.03.29.715150v1)) is expected. <5 min. runtime expected.
+A horizontally linear heatmap indicating p-value at each distance through color intensity as in **Fig. 2** of ([Lee et al. 2026](https://www.biorxiv.org/content/10.64898/2026.03.29.715150v1)) is expected. <5 min. runtime expected.
 ## Instructions for use
 Prepare a data frame format file with two columns denoting distance from a site of interest and p-value at the distance, preferably an output from [compute_tvd.R](./compute_tvd/compute_tvd.R). Run function via
 ```
@@ -114,7 +114,7 @@ Run function via
 ```
 plot_gene_mp(df, "Class", c("Mammalia"))
 ```
-A scatterplot displaying MP of all CpG of mammals at TSS of gene ACTB, as an example, as in format of Extended Data Fig. 7c in study ([Lee et al. 2026](https://www.biorxiv.org/content/10.64898/2026.03.29.715150v1)) is expected. <5 min. runtime is expected.
+A scatterplot displaying MP of all CpG of mammals at TSS of gene ACTB, as an example, as in format of **Extended Data Fig. 7c** in study ([Lee et al. 2026](https://www.biorxiv.org/content/10.64898/2026.03.29.715150v1)) is expected. <5 min. runtime is expected.
 ## Instructions for use
 Prepare a data frame format file with columns Distance, MP and Class indicating distance and MP of CpG and which class it belongs to, respectively. Run function indicating input file, the column indicating class information and which class you want to visualize i.e.
 ```
@@ -134,7 +134,7 @@ Start R session and declare function `plotMedian()` from script. Feed demo input
 ```
 plotMedian("medianMP_transcriptTSS_T2Thuman.tsv", -874, 948, "#000000", 170)
 ```
-A median MP profile with the promoter and core promoter size indicated as in Fig. 5f,g and Fig. 6 of study ([Lee et al. 2026](https://www.biorxiv.org/content/10.64898/2026.03.29.715150v1)) is expected.
+A median MP profile with the promoter and core promoter size indicated as in **Fig. 5f,g** and **Fig. 6** of study ([Lee et al. 2026](https://www.biorxiv.org/content/10.64898/2026.03.29.715150v1)) is expected.
 ## Instructions for use
 A tab-delimited file summarizing median methylation probability (MP) values at every distance within ±10,000 bp of site of interest must be calculated beforehand and provided as input. Run function via
 ```
@@ -152,7 +152,7 @@ Start R session and preceed running whole script by importing demo input found u
 ```
 df=read.table("comparison_sample.tsv")
 ```
-A scatterplot figure in the format of Fig. 5h-j of study ([Lee et al. 2026](https://www.biorxiv.org/content/10.64898/2026.03.29.715150v1)) is expected.
+A scatterplot figure in the format of **Fig. 5h-j** of study ([Lee et al. 2026](https://www.biorxiv.org/content/10.64898/2026.03.29.715150v1)) is expected.
 ## Instructions for use
 Organize your calculated promoter lengths for individual species beforehand into a data frame format with columns `Class`, `Genome.size` and `Promoter.size` and preceed prompting of the script with input importing:
 ```
@@ -173,7 +173,7 @@ and conduct visualization via
 ```
 plot_UMAP(df, "Title", df$Class, class_color)
 ```
-A scatterplot summarizing UMAP components in a two-dimensional space as in the format of Fig. 4 of study ([Lee et al. 2026](https://www.biorxiv.org/content/10.64898/2026.03.29.715150v1)) is expected.
+A scatterplot summarizing UMAP components in a two-dimensional space as in the format of **Fig. 4** of study ([Lee et al. 2026](https://www.biorxiv.org/content/10.64898/2026.03.29.715150v1)) is expected.
 ## Instructions for use
 Organize UMAP result into a data frame format with columns `UMAP1` and `UMAP2` for the top two UMAP components. Specify column name containing information color coding (e.g. phylogenetic class or tissue type). Specify a vector defining color coding scheme. Run via
 ```
