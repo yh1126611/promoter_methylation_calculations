@@ -1,5 +1,5 @@
 # Overview
-This page summarizes all content required to run analyses with custom code and software included in [Y. Lee, C. Lee, E.D. Jarvis, H. Kim. (2026) Epigenomic methylome landscape of promoters in vertebrate genomes.](https://www.biorxiv.org/content/10.64898/2026.03.29.715150v1.full)
+This page summarizes all content required to run analyses with custom code and software included in [Y. Lee, C. Lee, E.D. Jarvis, H. Kim. (2026). Epigenomic methylome landscape of promoters in vertebrate genomes.](https://www.biorxiv.org/content/10.64898/2026.03.29.715150v1.full)
 
 
 1. [findseq.py](#1-findseqpy)
@@ -9,7 +9,7 @@ This page summarizes all content required to run analyses with custom code and s
 5. [compute_tvd.R](#5-compute_tvdR)
 6. [visualize_tvd.R](#6-visualize_tvdR)
 7. [scatterplot_gene.R](#7-scatterplot_geneR)
-8. d
+8. [promoter_delineation_calculator.py](#8-promoter_delineation_calculatorpy)
 9. [plot_profile_promoter.R](#9-plot_profile_promoterR)
 10. [plot_comparison.R](#10-plot_comparisonR)
 11. [plot_umap.R](#11-plot_umapR)
@@ -146,7 +146,11 @@ plot_gene_mp(<Data_frame>, <Class_column_name>, <Class_of_interest>)
 ```
 Class must be one or more of: `Mammalia`, `Aves`, `Reptilia`, `Amphibia`, `Sarcopterygii`, `Actinopterygii` and `Chodrichthyes`.
 
-
+# 8. promoter_delineation_calculator.R
+## System requirement
+## Installation guide
+## Demo
+## Instructions for use
 
 # 9. [plot_profile_promoter.R](./plot_profile_promoter/plot_profile_promoter.R)
 ## System requirement
