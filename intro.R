@@ -43,12 +43,12 @@ ggplot(df, aes(x = genome_id, y = proportion, fill = feature_color, group = feat
   theme(axis.line = element_line(linewidth = axis_line_width))
 
 # Fig. 1d
-ggplot(df, aes(x = dinucleotide, y = total_length_mbp, fill = "black", group = dinucleotide)) +
+ggplot(df, aes(x = dinucleotide, y = count, fill = "black", group = dinucleotide)) +
   geom_bar(stat = "identity", position = "stack") +
   scale_fill_identity() +
   labs(y = "Length (Mbp)", x = "Dinucleotide") +
   scale_y_continuous(labels = label_number(scale = 1e-6)) +
-  nature_theme +
+  nature_theme
 
 # Fig. 1e
 ggplot(df, aes(x = MP)) + 
