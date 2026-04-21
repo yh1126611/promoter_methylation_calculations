@@ -1,4 +1,8 @@
-[1. findseq.py](#1-findseqpy)
+1. [findseq.py](#1-findseqpy)
+2. [bed_2_tbtools.py](#2-bed_2_tbtoolspy)
+3. [intro.R](#3-introR)
+4. [plot_profile.R](#4-plot_profileR)
+
 
 # 1. [findseq.py](./findseq/findseq.py)
 ## System requirement
