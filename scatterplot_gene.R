@@ -1,8 +1,8 @@
-plot_gene_mp <- function(MATRIX, COLUMN, TYPE, TEXT, ALPHA) {
+plot_gene_mp <- function(MATRIX, COLUMN, TYPE) {
   class_colors=c("Amphibia"="#984EA3", "Aves"="#00796B", "Reptilia"="#A6D609", "Actinopterygii"="#56B4E9", "Sarcopterygii"="#A6761D", "Chondrichthyes"="#0072B2", "Mammalia"="#E69F00")
   ggplot(MATRIX[MATRIX[[COLUMN]] %in% TYPE, ],aes(x = Distance, y = MP)) +
     #annotation_raster(PIC, xmin = -5000, xmax = Inf, ymin = 25, ymax = Inf) +
-    geom_point(aes(color=`Class (강)`), alpha = ALPHA, stroke = NA, shape = 19, size=0.25) +
+    geom_point(aes(color=`Class`), stroke = NA, shape = 19, size=0.25) +
     scale_color_manual(values=class_colors, na.value="black")+
     theme(
       plot.background = element_blank(),
@@ -24,4 +24,4 @@ plot_gene_mp <- function(MATRIX, COLUMN, TYPE, TEXT, ALPHA) {
 }
 
 # Usage
-plot_gene_mp(data_matrix_ACTB_merged, "Class", c("Mammalia"), "nGenome = 31\nnCpG = 19,432", 1)->mammal_gene
+plot_gene_mp(df, "Class", c("Mammalia"))->mammal_gene
