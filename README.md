@@ -1,3 +1,5 @@
+[1. findseq.py](#1-findseqpy)
+
 # 1. [findseq.py](./findseq/findseq.py)
 ## System requirement
 Runs on Python3. Tested on Python 3.8.10. No non-standard hardware required.
