@@ -24,15 +24,15 @@ font_title_size <- 6
 font_text_size <- 5
 line_dotted_width <- 0.25
 
-# Extended Data Fig. 1a
-ggplot() +
-  geom_bar(data = df, aes(x = genome_id, y = proportion, fill = feature_type), 
-           stat = "identity", position = "fill") +
-  scale_fill_manual(values = gc_colors, name = "Feature Type") + 
+# Fig. 1b
+ggplot(df, aes(x = genome_id, y = length, fill = type, group = type)) +
+  geom_bar(stat = "identity", position = "stack") +
+  scale_fill_manual(values = c("#BBBBBB", "transparent")) +
   labs(y = "Proportion", x = "Genome") +
-  nature_theme
+  nature_theme +
+  theme(axis.line = element_line(linewidth = axis_line_width))
 
-# Extended Data Fig. 1b
+# Fig. 1c
 ggplot(df, aes(x = genome_id, y = proportion, fill = feature_color, group = feature_type)) +
   geom_bar(stat = "identity", position = "stack") +
   scale_fill_identity() +
@@ -40,18 +40,16 @@ ggplot(df, aes(x = genome_id, y = proportion, fill = feature_color, group = feat
   nature_theme +
   theme(axis.line = element_line(linewidth = axis_line_width))
 
-# Extended Data Fig. 1c
-ggplot(df, aes(x = dinucleotide, y = total_length_mbp, fill = feature_color, group = dinucleotide)) +
+# Fig. 1d
+ggplot(df, aes(x = dinucleotide, y = total_length_mbp, fill = "black", group = dinucleotide)) +
   geom_bar(stat = "identity", position = "stack") +
   scale_fill_identity() +
   labs(y = "Length (Mbp)", x = "Dinucleotide") +
   scale_y_continuous(labels = label_number(scale = 1e-6)) +
   nature_theme +
-  geom_hline(yintercept = 389659438, linetype = "dotted", 
-             linewidth = line_dotted_width, color = "red")
 
-# Extended Data Fig. 1d
-ggplot(df, aes(x = modification_probability)) + 
+# Fig. 1e
+ggplot(df, aes(x = MP)) + 
   geom_histogram(aes(fill = after_stat(x)), binwidth = 0.1) +
   scale_fill_gradient(low = mp_gradient_colors["low"], 
                       high = mp_gradient_colors["high"], 
@@ -60,9 +58,9 @@ ggplot(df, aes(x = modification_probability)) +
   scale_y_continuous(labels = comma) +
   nature_theme
 
-# Extended Data Fig. 1e
-ggplot(stack_dataframe_sorted[stack_dataframe_sorted$chromosome != "MT", ], 
-       aes(x = chromosome, y = cpg_count, fill = modification_probability)) + 
+# Fig. 1f
+ggplot(stack_dataframe_sorted[stack_dataframe_sorted$element != "MT", ], 
+       aes(x = element, y = count, fill = modification_probability)) + 
   geom_bar(stat = "identity", position = "stack") + 
   scale_fill_gradient(low = mp_gradient_colors["low"], high = mp_gradient_colors["high"]) + 
   labs(y = "Number of CpGs", x = "Chromosome", fill = "Modification Probability") +
@@ -74,14 +72,18 @@ ggplot(stack_dataframe_sorted[stack_dataframe_sorted$chromosome != "MT", ],
         legend.text = element_blank(),
         legend.ticks = element_blank())
 
-# Extended Data Fig. 1f
-chromosomal_proportion_plot <- ggplot(
+# Fig. 1g
+ggplot(
   stack_dataframe_sorted[stack_dataframe_sorted$chromosome != "MT", ], 
-  aes(x = chromosome, y = cpg_count, fill = modification_probability)
+  aes(x = element, y = count, fill = modification_probability)
 ) + 
   geom_bar(stat = "identity", position = "fill") + 
   scale_fill_gradient(low = mp_gradient_colors["low"], high = mp_gradient_colors["high"]) +  
   labs(y = "Proportion of CpGs", x = "Chromosome", fill = "Modification Probability") +
   scale_y_continuous(labels = comma) +
   nature_theme +
-  theme(legend.position = "none")
+  theme(legend.position = "right",
+        legend.key.size = unit(0.25, "cm"),
+        legend.title = element_text(size = 8),
+        legend.text = element_blank(),
+        legend.ticks = element_blank())
