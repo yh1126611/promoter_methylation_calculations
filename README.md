@@ -4,9 +4,14 @@ Runs on Python3. Tested on Python 3.8.10. No non-standard hardware required.
 ## Installation guide
 No installation required. Grant execution permission by `chmod +x findseq.py`
 ## Demo
-Find demo input under findseq/T2T-CHM13v2.0.fna (hs1 genome) and run via `python3 findseq.py T2T-CHM13v2.0.fna CpG.bed CG`. Output should be locations of all occurrences of CpG (CG) on hs1 genome in BED format. <10 min. runtime is expected.
+Find demo input under findseq/T2T-CHM13v2.0.fna (hs1 genome) and run via
+```
+python3 findseq.py T2T-CHM13v2.0.fna CpG.bed CG
+```
+Output should be locations of all occurrences of CpG (CG) on hs1 genome in BED format. <10 min. runtime is expected.
 ## Instructions for use
-Find dinucleotide (or sequence motif of any length) via `python3 findseq.py <Genome.fasta> <Out.bed> <Motif>`.
+Find dinucleotide (or sequence motif of any length) via
+```python3 findseq.py <Genome.fasta> <Out.bed> <Motif>```
 
 # 2. [bed_2_tbtools.py](./bed_2_tbtools/bed_2_tbtools.py)
 ## System requirement
@@ -14,7 +19,9 @@ Runs on Python3. Tested on Python 3.12.8. No non-standard hardware required.
 ## Installation guide
 No installation required. Grant execution permission by `chmod +x bed_2_tbtools.py`
 ## Demo
-Find demo input under bed_2_tbtoos/CG.bed (All CpG sites of hs1 chromosome 1). Run script by `python3 bed_2_tbtools.py`. Enter input (`CG.bed`) and output (`CG.BINstat.tab.xls`) filenames when prompted. A file summarizing the length of region occupied by the BED file in every 10,000 bp window of the genome is expected. <10 min. runtime is expected.
+Find demo input under bed_2_tbtoos/CG.bed (All CpG sites of hs1 chromosome 1). Run script by
+```python3 bed_2_tbtools.py```
+Enter input (`CG.bed`) and output (`CG.BINstat.tab.xls`) filenames when prompted. A file summarizing the length of region occupied by the BED file in every 10,000 bp window of the genome is expected. <10 min. runtime is expected.
 ## Instructions for use
 Run script while inputting your BED file at prompt. The output is compatible as input for visualization as a circos plot track in [TBtools](https://github.com/CJ-Chen/TBtools-II) ([Chen et al., 2023](https://www.cell.com/molecular-plant/fulltext/S1674-2052(23)00281-2))
 
