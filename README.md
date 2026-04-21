@@ -1,5 +1,5 @@
 # Overview
-This page summarizes all content required to run analyses with custom code and software included in [Y. Lee, C. Lee, E.D. Jarvis, H. Kim. (2026). Epigenomic methylome landscape of promoters in vertebrate genomes.](https://www.biorxiv.org/content/10.64898/2026.03.29.715150v1.full)
+This page summarizes all content required to run analyses with custom code and software included in [Epigenomic methylome landscape of promoters in vertebrate genomes (Y. Lee, C. Lee, E.D. Jarvis and H. Kim, 2026)](https://www.biorxiv.org/content/10.64898/2026.03.29.715150v1.full)
 
 
 1. [findseq.py](#1-findseqpy)
