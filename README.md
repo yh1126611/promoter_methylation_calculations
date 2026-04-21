@@ -2,6 +2,13 @@
 2. [bed_2_tbtools.py](#2-bed_2_tbtoolspy)
 3. [intro.R](#3-introR)
 4. [plot_profile.R](#4-plot_profileR)
+5. [compute_tvd.R](#5-compute_tvdR)
+6. [visualize_tvd.R](#6-visualize_tvdR)
+7. [scatterplot_gene.R](#7-scatterplot_geneR)
+8. d
+9. [plot_profile_promoter.R](#9-plot_profile_promoterR)
+10. [plot_comparison.R](#10-plot_comparisonR)
+11. [plot_umap.R](#11-plot_umapR)
 
 
 # 1. [findseq.py](./findseq/findseq.py)
