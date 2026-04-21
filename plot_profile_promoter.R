@@ -1,7 +1,7 @@
 # Enter median MP information of species/class as a data frame with a, b (broader promoter delination point), custom color (hex code) and cpsize (core promoter size).
 
 plotMedian = function(filename, a, b, color, cpsize){
-  df=fread(filename); colnames(df)=c("Dist", "Median"); df=df[df$Dist>=bound*-1&Dist<=bound,]
+  df=fread(filename); colnames(df)=c("Dist", "Median")
   realYmax=min(df$Median)+((max(df$Median)-min(df$Median))/8.5*10)
   labelYmax=max(df$Median)
   ggplot(df)+
