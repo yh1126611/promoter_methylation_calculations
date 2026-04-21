@@ -16,7 +16,7 @@ def find_motif_sites(fasta_path, bed_path, motif):
 
 if __name__ == "__main__":
     if len(sys.argv) != 4:
-        print("Usage: python find_motif_sites.py <input.fasta> <output.bed> <motif>")
+        print("Usage: python findseq.py <input.fasta> <output.bed> <motif>")
         sys.exit(1)
     fasta_path = sys.argv[1]
     bed_path = sys.argv[2]
