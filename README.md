@@ -41,7 +41,7 @@ processed_data <- preprocess_data("MP_TSS_hg38.tsv")
 tss_plot <- create_tss_plot(processed_data)
 print(tss_plot)
 ```
-A line plot of an average MP profile at TSS as in format of Fig. 2 of study (Lee et al., 2026) is expected. <5 min. runtime is expected.
+A line plot of an average MP profile at TSS as in format of Fig. 2 of study ([Lee et al., 2026](https://www.biorxiv.org/content/10.64898/2026.03.29.715150v1.full)) is expected. <5 min. runtime is expected.
 ## Instructions for use
 Prepare a tab-delimited file with columns indicating information on I. Vicinal TSS ID, II. Distance from TSS, III. MP and IV. Strand (+/-) for every row corresponding to a CpG. Input the file through the aforementioned pipeline:
 ```
@@ -56,9 +56,9 @@ Runs on R. Tested on Rstudio/2025.09.2+418 "Cucumberleaf Sunflower" Release powe
 ## Installation guide
 No installation required.
 ## Demo
-Declare function `compute_tvd_pvalues()` from script. Find inputs compute_tvd.R/MP_wg_hg38.tsv (MP of all CpGs on hg38 genome) and MP_TSS_hg38.tsv (MP and distance from TSS for all TSS-vicinal (±10,000 bp) CpGs on hg38). Run function via `compute_tvd_pvalues("MP_wg_hg38.tsv", "MP_TSS_hg38_tsv")`. A data frame comprising information on p-value at every distance point is expected. 30 hour runtime is expected.
+Declare function `compute_tvd_pvalues()` from script. Find inputs compute_tvd/MP_wg_hg38.tsv (MP of all CpGs on hg38 genome) and compute_tvd/MP_TSS_hg38.tsv (MP and distance from TSS for all TSS-vicinal (±10,000 bp) CpGs on hg38). Run function via `compute_tvd_pvalues("MP_wg_hg38.tsv", "MP_TSS_hg38_tsv")`. A data frame comprising information on p-value at every distance point is expected. 30 hour runtime is expected.
 ## Instructions for use
-Prepare two tab-delimited files: 1. Population (wg_file; whole-genome) and 2. sample (element_file; region of interest e.g. TSS vicinity). The population file must comprise rows corresponding to every CpG on genome and contain a column with MP information (column 4 by default). The sample file must comprise rows corresponding to CpG inside the region of interest and contain a column with distance, MP and strand information (columns 2, 3 and 4, respectively, by default). Run function via `compute_tvd_pvalues("<population_file>", "<sample_file>")`
+Prepare two tab-delimited files: 1. Population (`wg_file`; whole-genome) and 2. sample (`element_file`; region of interest e.g. TSS vicinity). The population file must comprise rows corresponding to every CpG on genome and contain a column with MP information (column 4 by default). The sample file must comprise rows corresponding to CpG inside the region of interest and contain a column with distance, MP and strand information (columns 2, 3 and 4, respectively, by default). Run function via `compute_tvd_pvalues("<population_file>", "<sample_file>")`
 
 # 6. visualize_tvd.R
 ## System requirement
@@ -66,9 +66,9 @@ Runs on R. Tested on Rstudio/2025.09.2+418 "Cucumberleaf Sunflower" Release powe
 ## Installation guide
 No installation required.
 ## Demo
-Declare function `plot_pvalue_heatmap()` from script. Import demo input found at visualize_tvd/pvalues_TSS_hg38.tsv via `df=read.table("pvalues_TSS_hg38.tsv")`. Run function with input via `plot_pvalue_heatmap(df, "Title")`.
+Declare function `plot_pvalue_heatmap()` from script. Import demo input found at visualize_tvd/pvalues_TSS_hg38.tsv via `df=read.table("pvalues_TSS_hg38.tsv")`. Run function with input via `plot_pvalue_heatmap(df, "Title")`. A horizontally linear heatmap indicating p-value at each distance through color intensity as in Fig. 2 of ([Lee et al. 2026](https://www.biorxiv.org/content/10.64898/2026.03.29.715150v1)) is expected. <5 min. runtime expected.
 ## Instructions for use
-Prepare a data frame format file with two columns denoting distance from a site of interest and p-value at the distance, preferrably an output from from [compute_tvd.R](#5.compute_tvd.R). Run function via plot_pvalue_heatmap(<p_value_heatmap>, "<Your_title>").
+Prepare a data frame format file with two columns denoting distance from a site of interest and p-value at the distance, preferably an output from [compute_tvd.R](#5-compute_tvdr). Run function via `plot_pvalue_heatmap(<p_value_heatmap>, "<Your_title>")`.
 
 # 7. scatterplot_gene.R
 ## System requirement
@@ -76,9 +76,9 @@ Runs on R. Tested on Rstudio/2025.09.2+418 "Cucumberleaf Sunflower" Release powe
 ## Installation guide
 No installation required.
 ## Demo
-Start R session and declare function plot_gene_mp(). Import demo input found under scatterplot_gene/scatterplot_sample.tsv via df=read.table("scatterplot_sample.tsv"). Run function via plot_gene_mp(df, "Class", c("Mammalia")). A scatterplot displaying MP of all CpG of mammals at TSS of gene ACTB, as an example, as in format of Extended Data Fig. 7c in study (Lee et al., 2026) is expected. <5 min. runtime is expected.
+Start R session and declare function `plot_gene_mp()`. Import demo input found under scatterplot_gene/scatterplot_sample.tsv via df=read.table("scatterplot_sample.tsv"). Run function via `plot_gene_mp(df, "Class", c("Mammalia"))`. A scatterplot displaying MP of all CpG of mammals at TSS of gene ACTB, as an example, as in format of Extended Data Fig. 7c in study ([Lee et al. 2026](https://www.biorxiv.org/content/10.64898/2026.03.29.715150v1)) is expected. <5 min. runtime is expected.
 ## Instructions for use
-Prepare a data frame format file with columns Distance, MP and Class indicating distance and MP of CpG and which class it belongs to, respectively. Run function indicating input file, the column indicating class information and which class you want to visualize i.e. plot_gene_mp(<Data_frame>, <Class_column_name>, <Class_of_interest>). Class must be one or more of: Mammalia, Aves, Reptilia, Amphibia, Sarcopterygii, Actinopterygii and Chodrichthyes.
+Prepare a data frame format file with columns Distance, MP and Class indicating distance and MP of CpG and which class it belongs to, respectively. Run function indicating input file, the column indicating class information and which class you want to visualize i.e. `plot_gene_mp(<Data_frame>, <Class_column_name>, <Class_of_interest>)`. Class must be one or more of: `Mammalia`, `Aves`, `Reptilia`, `Amphibia`, `Sarcopterygii`, `Actinopterygii` and `Chodrichthyes`.
 
 
 
@@ -88,9 +88,9 @@ Runs on R. Tested on Rstudio/2025.09.2+418 "Cucumberleaf Sunflower" Release powe
 ## Installation guide
 No installation required.
 ## Demo
-Start R session and declare function plotMedian() found in script. Feed demo input found under plot_profile_promoter/medianMP_transcriptTSS_T2Thuman.tsv (Median MP profile at TSS of hs1) to function while specifying promoter start, end, desired line color and core promoter length by plotMedian("medianMP_transcriptTSS_T2Thuman.tsv", -874, 948, "#000000", 170). A median MP profile with the promoter and core promoter size indicated as in Fig. 5f,g and Fig. 6 of study (Lee et al., 2026) is expected.
+Start R session and declare function `plotMedian()` found in script. Feed demo input found under plot_profile_promoter/medianMP_transcriptTSS_T2Thuman.tsv (Median MP profile at TSS of hs1) to function while specifying promoter start, end, desired line color and core promoter length by `plotMedian("medianMP_transcriptTSS_T2Thuman.tsv", -874, 948, "#000000", 170)`. A median MP profile with the promoter and core promoter size indicated as in Fig. 5f,g and Fig. 6 of study ([Lee et al. 2026](https://www.biorxiv.org/content/10.64898/2026.03.29.715150v1)) is expected.
 ## Instructions for use
-A tab-delimited file summarizing median methylation probability (MP) values at every distance within ±10,000 bp of site of interest must be calculated beforehand and provided as input. Run function via plotMedian("<Filename>", <Promoter_start>, <Promoter_end>, <Color(Hex)>, <Core_size>) to visualize the median MP profile of species.
+A tab-delimited file summarizing median methylation probability (MP) values at every distance within ±10,000 bp of site of interest must be calculated beforehand and provided as input. Run function via `plotMedian("<Filename>", <Promoter_start>, <Promoter_end>, <Color(Hex)>, <Core_size>)` to visualize the median MP profile of species.
 
 # 10. plot_comparison.R
 ## System requirement
@@ -98,9 +98,9 @@ Runs on R. Tested on Rstudio/2025.09.2+418 "Cucumberleaf Sunflower" Release powe
 ## Installation guide
 No installation required.
 ## Demo
-Start R session and preceed running whole script by importing demo input found under plot_comparison/comparison_sample.tsv as df via df=read.table("comparison_sample.tsv"). A scatterplot figure in the format of Fig. 5h-j of study (Lee et al. 2026) is expected.
+Start R session and preceed running whole script by importing demo input found under plot_comparison/comparison_sample.tsv as `df` via `df=read.table("comparison_sample.tsv")`. A scatterplot figure in the format of Fig. 5h-j of study ([Lee et al. 2026](https://www.biorxiv.org/content/10.64898/2026.03.29.715150v1)) is expected.
 ## Instructions for use
-Organize your calculated promoter lengths for individual species beforehand into a data frame format with columns Class, Genome.size and Promoter.size and preceed prompting of the script with input importing i.e. df=read.table("<Your_promoter_sizes.tsv>")
+Organize your calculated promoter lengths for individual species beforehand into a data frame format with columns `Class`, `Genome.size` and `Promoter.size` and preceed prompting of the script with input importing i.e. `df=read.table("<Your_promoter_sizes.tsv>")`
 
 # 11. plot_umap.R
 ## System requirement
