@@ -1,4 +1,4 @@
-# 1. findseq.py
+# 1. [findseq.py](./findseq/findseq.py)
 ## System requirement
 Runs on Python3. Tested on Python 3.8.10. No non-standard hardware required.
 ## Installation guide
@@ -8,7 +8,7 @@ Find demo input under findseq/T2T-CHM13v2.0.fna (hs1 genome) and run via `python
 ## Instructions for use
 Find dinucleotide (or sequence motif of any length) via `python3 findseq.py <Genome.fasta> <Out.bed> <Motif>`.
 
-# 2. bed_2_tbtools.py
+# 2. [bed_2_tbtools.py](./bed_2_tbtools/bed_2_tbtools.py)
 ## System requirement
 Runs on Python3. Tested on Python 3.12.8. No non-standard hardware required.
 ## Installation guide
@@ -18,7 +18,7 @@ Find demo input under bed_2_tbtoos/CG.bed (All CpG sites of hs1 chromosome 1). R
 ## Instructions for use
 Run script while inputting your BED file at prompt. The output is compatible as input for visualization as a circos plot track in TBtools ([Chen et al., 2023](https://www.cell.com/molecular-plant/fulltext/S1674-2052(23)00281-2))
 
-# 3. intro.R
+# 3. [intro.R](./intro/intro.R)
 ## System requirement
 Runs on R. Tested on Rstudio/2025.09.2+418 "Cucumberleaf Sunflower" Release powered by R version 4.4.1. No non-standard hardware required.
 ## Installation guide
