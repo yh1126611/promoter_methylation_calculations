@@ -46,7 +46,7 @@ Run script while inputting your BED file at prompt. The output is compatible as 
 ## System requirement
 Runs on R. Tested on Rstudio/2025.09.2+418 “Cucumberleaf Sunflower” Release powered by R version 4.4.1. No non-standard hardware required.
 ## Installation guide
-Packages `data.table`, `dplyr`, `ggplot2` and `scales` must be installed in R.
+Packages `data.table`, `dplyr`, `ggplot2` and `scales` must be installed in R prior to usage.
 ## Demo
 Execute directly on R by blocks specified in the code, preferrably on Rstudio, by importing each input file ([Fig1b.tsv](./intro/Fig1b.tsv), [Fig1c.tsv](./intro/Fig1c.tsv), [Fig1d.tsv](./intro/Fig1d.tsv), [Fig1e.tsv](./intro/Fig1e.tsv), [Fig1fg.tsv](./intro/Fig1fg.tsv)) uploaded under [intro](./intro) to R session before execution of the associated code block as `df` via
 ```
@@ -58,7 +58,7 @@ df=read.table("Fig1b.tsv")
 ```
 and prompting the block. A visualization of figure in the format of **Fig. 1b-g** of paper ([Lee et al., 2026](https://www.biorxiv.org/content/10.64898/2026.03.29.715150v1)) is expected. Less than 5 minute run time expected for each block.
   
-![Visualization generated from intro.R](./intro/intro_sample.png)
+![Sample visualization generated from intro.R](./intro/intro_sample.png)
   
 ## Instructions for use
 Import your data via
@@ -69,20 +69,24 @@ replacing `<Filename>` with your data before executing a block. The data must be
 
 # 4. [plot_profile.R](./plot_profile/plot_profile.R)
 ## System requirement
-Runs on R. Tested on Rstudio/2025.09.2+418 "Cucumberleaf Sunflower" Release powered by R version 4.4.1. No non-standard hardware required.
+Runs on R. Tested on Rstudio/2025.09.2+418 “Cucumberleaf Sunflower” Release powered by R version 4.4.1. No non-standard hardware required.
 ## Installation guide
-No installation required.
+Packages `data.table`, `dplyr` and `ggplot2` must be installed in R prior to usage.
 ## Demo
-Declare functions `preprocess_data()` and `create_tss_plot()` from script. Pipe the demo input found under plot_profile/MP_TSS_hg38.tsv through functions: I. `preprocess_data()`, II. `create_tss_plot()` and III. print output
+Declare functions `preprocess_data()` and `create_tss_plot()` from script. Pipe the demo input found under [plot_profile/MP_TSS_hg38.tsv](./plot_profile/MP_TSS_hg38.tsv) through functions: **I.** `preprocess_data()`, **II.** `create_tss_plot()` and **III.** print output
+  
 e.g.
 ```
 processed_data <- preprocess_data("MP_TSS_hg38.tsv")
 tss_plot <- create_tss_plot(processed_data)
 print(tss_plot)
 ```
-A line plot of an average MP profile at TSS as in format of **Fig. 2** of study ([Lee et al., 2026](https://www.biorxiv.org/content/10.64898/2026.03.29.715150v1.full)) is expected. <5 min. runtime is expected.
+A line plot of an average MP profile at TSS as in format of **Fig. 2** of study ([Lee et al., 2026](https://www.biorxiv.org/content/10.64898/2026.03.29.715150v1.full)) is expected. <5 min. runtime expected.
+
+![Sample visualization generated from plot_profile.R](./plot_profile/plot_profile_sample.png)
+  
 ## Instructions for use
-Prepare a tab-delimited file with columns indicating information on I. Vicinal TSS ID, II. Distance from TSS, III. MP and IV. Strand (+/-) for every row corresponding to a CpG. Input the file through the aforementioned pipeline:
+Prepare a tab-delimited file with columns indicating information on **I.** Vicinal TSS ID, **II.** Distance from TSS, **III.** MP and **IV.** Strand (+/-) for every row corresponding to a CpG. Input the file through the aforementioned pipeline:
 ```
 processed_data <- preprocess_data("<Your_file.tsv>")
 tss_plot <- create_tss_plot(processed_data)
