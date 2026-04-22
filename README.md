@@ -95,9 +95,9 @@ print(tss_plot)
 
 # 5. [compute_tvd.R](./compute_tvd/compute_tvd.R)
 ## System requirement
-Runs on R. Tested on Rstudio/2025.09.2+418 "Cucumberleaf Sunflower" Release powered by R version 4.4.1. No non-standard hardware required.
+Runs on R. Tested on Rstudio/2025.09.2+418 “Cucumberleaf Sunflower” Release powered by R version 4.4.1. No non-standard hardware required.
 ## Installation guide
-No installation required.
+Packages `data.table` must be installed in R prior to usage.
 ## Demo
 Declare function `compute_tvd_pvalues()` from script. Find inputs compute_tvd/MP_wg_hg38.tsv (MP of all CpGs on hg38 genome) and compute_tvd/MP_TSS_hg38.tsv (MP and distance from TSS for all TSS-vicinal (±10,000 bp) CpGs on hg38). Run function via
 ```
@@ -112,21 +112,24 @@ compute_tvd_pvalues("<population_file>", "<sample_file>")
 
 # 6. [visualize_tvd.R](./visualize_tvd/visualize_tvd.R)
 ## System requirement
-Runs on R. Tested on Rstudio/2025.09.2+418 "Cucumberleaf Sunflower" Release powered by R version 4.4.1. No non-standard hardware required.
+Runs on R. Tested on Rstudio/2025.09.2+418 “Cucumberleaf Sunflower” Release powered by R version 4.4.1. No non-standard hardware required.
 ## Installation guide
 No installation required.
 ## Demo
-Start R session and declare function `plot_pvalue_heatmap()` from script. Import demo input found at [visualize_tvd/pvalues_TSS_hg38.tsv](./visualize_tvd/pvalues_TSS_hg38.tsv) via
+Start R session and declare function `plot_pvalue_heatmap()` from script. Import demo input found at [visualize_tvd/pvalues_TSS_hg38.tsv](./visualize_tvd/pvalues_TSS_hg38.tsv) to variable `p_values_df` via
 ```
-df=read.table("pvalues_TSS_hg38.tsv")
+p_values_df=read.table("pvalues_TSS_hg38.tsv")
 ```
 Run function with input via
 ```
 plot_pvalue_heatmap(df, "Title")
 ```
 A horizontally linear heatmap indicating p-value at each distance through color intensity as in **Fig. 2** of ([Lee et al. 2026](https://www.biorxiv.org/content/10.64898/2026.03.29.715150v1)) is expected. <5 min. runtime expected.
+  
+![Sample visualization generated from plot_profile.R](./visualize_tvd/visualize_tvd_sample.png)
+  
 ## Instructions for use
-Prepare a data frame format file with two columns denoting distance from a site of interest and p-value at the distance, preferably an output from [compute_tvd.R](./compute_tvd/compute_tvd.R). Run function via
+Prepare a data frame format file with two columns denoting distance from a site of interest and p-value at the distance, i.e. an output from [compute_tvd.R](#5-compute_tvdR). Run function via
 ```
 plot_pvalue_heatmap(<p_value_heatmap>, "<Your_title>")
 ```
