@@ -1,5 +1,5 @@
 # Overview
-This page summarizes all content required to run analyses with custom code and software included in [Epigenomic methylome landscape of promoters in vertebrate genomes (Y. Lee, C. Lee, E.D. Jarvis, H. Kim; 2026)](https://www.biorxiv.org/content/10.64898/2026.03.29.715150v1.full)
+This page summarizes all content required to run analyses with custom code and software included in [Epigenomic methylome landscape of promoters in vertebrate genomes (Y. Lee, C. Lee, E.D. Jarvis, H. Kim; 2026)](https://www.biorxiv.org/content/10.64898/2026.03.29.715150v1.full).
 
 
 1. [findseq.py](#1-findseqpy)
@@ -36,17 +36,17 @@ Runs on Python3. Tested on Python 3.12.8. No non-standard hardware required.
 ## Installation guide
 No installation required. Grant execution permission by `chmod +x bed_2_tbtools.py`
 ## Demo
-Find demo input under bed_2_tbtoos/CG.bed (All CpG sites of hs1 chromosome 1). Run script by
+Find demo input under bed_2_tbtools/CG.bed (All CpG sites of hs1 chromosome 1). Run script by
 ```python3 bed_2_tbtools.py```
-Enter input (`CG.bed`) and output (`CG.BINstat.tab.xls`) filenames when prompted. A file summarizing the length of region occupied by the BED file in every 10,000 bp window of the genome is expected. <10 min. runtime is expected.
+Enter input (`CG.bed`) and output (`CG.BINstat.tab.xls`) file names when prompted. A file summarizing the length of region occupied by the BED file in every 10,000 bp window of the genome is expected. 10 min. runtime expected.
 ## Instructions for use
 Run script while inputting your BED file at prompt. The output is compatible as input for visualization as a circos plot track in [TBtools](https://github.com/CJ-Chen/TBtools-II) ([Chen et al., 2023](https://www.cell.com/molecular-plant/fulltext/S1674-2052(23)00281-2))
 
 # 3. [intro.R](./intro/intro.R)
 ## System requirement
-Runs on R. Tested on Rstudio/2025.09.2+418 "Cucumberleaf Sunflower" Release powered by R version 4.4.1. No non-standard hardware required.
+Runs on R. Tested on Rstudio/2025.09.2+418 “Cucumberleaf Sunflower” Release powered by R version 4.4.1. No non-standard hardware required.
 ## Installation guide
-No installation required.
+Packages `data.table`, `dplyr`, `ggplot2` and `scales` must be installed in R.
 ## Demo
 Execute directly on R by blocks specified in the code, preferrably on Rstudio, by importing each input file uploaded under [intro](./intro) to R session as df or the variable name used in each block via
 ```
