@@ -52,6 +52,6 @@ create_tss_plot <- function(df) {
 }
 
 # Usage
-processed_data <- preprocess_data("MP_uniqueTSS_GRCh38.p14.tsv")
+processed_data <- preprocess_data("MP_uniqueTSS_hg38.tsv")
 tss_plot <- create_tss_plot(processed_data)
 print(tss_plot)
