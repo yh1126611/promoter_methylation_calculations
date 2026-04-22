@@ -122,21 +122,22 @@ p_values_df=read.table("pvalues_TSS_hg38.tsv")
 ```
 Run function with input via
 ```
-plot_pvalue_heatmap(df, "Title")
+plot_pvalue_heatmap(df, "P-value")
 ```
 A horizontally linear heatmap indicating p-value at each distance through color intensity as in **Fig. 2** of ([Lee et al. 2026](https://www.biorxiv.org/content/10.64898/2026.03.29.715150v1)) is expected. <5 min. runtime expected.
   
 ![Sample visualization generated from plot_profile.R](./visualize_tvd/visualize_tvd_sample.png)
   
 ## Instructions for use
-Prepare a data frame format file with two columns denoting distance from a site of interest and p-value at the distance, i.e. an output from [compute_tvd.R](#5-compute_tvdR). Run function via
+Prepare a data frame format file with two columns denoting distance from a site of interest and p-value at the distance, most likely an output from [compute_tvd.R](#5-compute_tvdR). Run function via
 ```
-plot_pvalue_heatmap(<p_value_heatmap>, "<Your_title>")
+p_values_df=read.table("<Your_file.tsv>")
+plot_pvalue_heatmap(p_values_df, "<Your_title>")
 ```
 
 # 7. [scatterplot_gene.R](./scatterplot_gene/scatterplot_gene.R)
 ## System requirement
-Runs on R. Tested on Rstudio/2025.09.2+418 "Cucumberleaf Sunflower" Release powered by R version 4.4.1. No non-standard hardware required.
+Runs on R. Tested on Rstudio/2025.09.2+418 “Cucumberleaf Sunflower” Release powered by R version 4.4.1. No non-standard hardware required.
 ## Installation guide
 No installation required.
 ## Demo
