@@ -160,7 +160,7 @@ plot_gene_mp(<Data_frame>, <Class_column_name>, <Class_of_interest>)
 ```
 Class must be one or more of: `Mammalia`, `Aves`, `Reptilia`, `Amphibia`, `Sarcopterygii`, `Actinopterygii` and `Chodrichthyes`, concatenated by the `c()` function of R.
 
-# 8. promoter_delineation_calculator.R
+# 8. [promoter_delineation_calculator.R](./promoter_delineation_calculator/promoter_delineation_calculator.R)
 ## System requirement
 ## Installation guide
 ## Demo
@@ -172,7 +172,7 @@ Runs on R. Tested on Rstudio/2025.09.2+418 “Cucumberleaf Sunflower” Release 
 ## Installation guide
 No installation required.
 ## Demo
-Start R session and declare function `plotMedian()` from script. Feed demo input found under [plot_profile_promoter/medianMP_transcriptTSS_T2Thuman.tsv](./plot_profile_promoter/medianMP_transcriptTSS_T2Thuman.tsv) (Median MP profile at TSS of hs1) to function while specifying promoter start, end, desired line color and core promoter length by
+Start R session and declare function `plotMedian()` from script. Feed demo input found under [plot_profile_promoter/medianMP_transcriptTSS_T2Thuman.tsv](./plot_profile_promoter/medianMP_transcriptTSS_T2Thuman.tsv) (Median MP profile at TSS of hs1) to function while specifying promoter start (-874), end (948), desired line color (#000000) and core promoter length (170), all determined beforehand from calculations most likely using [promoter_delineation_calculator.py](#8-promoter_delineation_calculatorpy), by:
 ```
 plotMedian("medianMP_transcriptTSS_T2Thuman.tsv", -874, 948, "#000000", 170)
 ```
@@ -186,17 +186,17 @@ to visualize the median MP profile of species.
 
 # 10. [plot_comparison.R](./plot_comparison/plot_comparison.R)
 ## System requirement
-Runs on R. Tested on Rstudio/2025.09.2+418 "Cucumberleaf Sunflower" Release powered by R version 4.4.1. No non-standard hardware required.
+Runs on R. Tested on Rstudio/2025.09.2+418 “Cucumberleaf Sunflower” Release powered by R version 4.4.1. No non-standard hardware required.
 ## Installation guide
 No installation required.
 ## Demo
-Start R session and preceed running whole script by importing demo input found under [plot_comparison/comparison_sample.tsv](./plot_comparison/comparison_sample.tsv) as `df` via
+Start R session and precede running whole script by importing demo input found under [plot_comparison/comparison_sample.tsv](./plot_comparison/comparison_sample.tsv) as `df` via
 ```
 df=read.table("comparison_sample.tsv")
 ```
 A scatterplot figure in the format of **Fig. 5h-j** of study ([Lee et al. 2026](https://www.biorxiv.org/content/10.64898/2026.03.29.715150v1)) is expected.
 ## Instructions for use
-Organize your calculated promoter lengths for individual species beforehand into a data frame format with columns `Class`, `Genome.size` and `Promoter.size` and preceed prompting of the script with input importing:
+Organize your calculated promoter lengths for individual species beforehand into a data frame format with columns: `Class`, `Genome.size` and `Promoter.size`. Precede prompting of the script with input importing:
 ```
 df=read.table("<Your_promoter_sizes.tsv>")
 ```
@@ -207,7 +207,7 @@ Runs on R. Tested on Rstudio/2025.09.2+418 "Cucumberleaf Sunflower" Release powe
 ## Installation guide
 Package `ggplot2` must be installed in R prior to usage.
 ## Demo
-Start R session and declare function `plot_UMAP()`. Import demo input found under [plot_umap/umap_sample.tsv](./plot_umap/umap_sample.tsv) via
+Start R session and declare function `plot_UMAP()`. Import demo input found under [plot_umap/umap_sample.tsv](./plot_umap/umap_sample.tsv), which contains organic UMAP values from MP properties of 83 vertebrate species, via
 ```
 df=read.table("umap_sample.tsv")
 ```
