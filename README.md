@@ -160,7 +160,7 @@ plot_gene_mp(<Data_frame>, <Class_column_name>, <Class_of_interest>)
 ```
 Class must be one or more of: `Mammalia`, `Aves`, `Reptilia`, `Amphibia`, `Sarcopterygii`, `Actinopterygii` and `Chodrichthyes`, concatenated by the `c()` function of R.
 
-# 8. [promoter_delineation_calculator.R](./promoter_delineation_calculator/promoter_delineation_calculator.R)
+# 8. [promoter_delineation_calculator.py](./promoter_delineation_calculator/promoter_delineation_calculator.py)
 ## System requirement
 ## Installation guide
 ## Demo
