@@ -205,7 +205,7 @@ df=read.table("<Your_promoter_sizes.tsv>")
 ## System requirement
 Runs on R. Tested on Rstudio/2025.09.2+418 "Cucumberleaf Sunflower" Release powered by R version 4.4.1. No non-standard hardware required.
 ## Installation guide
-No installation required.
+Package `ggplot2` must be installed in R prior to usage.
 ## Demo
 Start R session and declare function `plot_UMAP()`. Import demo input found under [plot_umap/umap_sample.tsv](./plot_umap/umap_sample.tsv) via
 ```
@@ -216,6 +216,9 @@ and conduct visualization via
 plot_UMAP(df, "Title", df$Class, class_color)
 ```
 A scatterplot summarizing UMAP components in a two-dimensional space as in the format of **Fig. 4** of study ([Lee et al. 2026](https://www.biorxiv.org/content/10.64898/2026.03.29.715150v1)) is expected.
+
+![Sample visualization generated from plot_umap.R](./plot_umap/plot_umap_sample.png)
+  
 ## Instructions for use
 Organize UMAP result into a data frame format with columns `UMAP1` and `UMAP2` for the top two UMAP components. Specify column name containing information color coding (e.g. phylogenetic class or tissue type). Specify a vector defining color coding scheme. Run via
 ```
