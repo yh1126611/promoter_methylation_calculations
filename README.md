@@ -56,7 +56,7 @@ e.g.
 ```
 df=read.table("Fig1b.tsv")
 ```
-and prompting the block. A visualization of figure in the format of [**Fig. 1b-g**](https://www.biorxiv.org/content/biorxiv/early/2026/03/30/2026.03.29.715150/F1.large.jpg) of paper ([Lee et al., 2026](https://www.biorxiv.org/content/10.64898/2026.03.29.715150v1)) is expected. Less than 5 minute run time expected for each block.
+and prompting the block. A visualization of figure in the format of [**Fig. 1b-g**](https://www.biorxiv.org/content/biorxiv/early/2026/03/30/2026.03.29.715150/F1.large.jpg) of srudy ([Lee et al., 2026](https://www.biorxiv.org/content/10.64898/2026.03.29.715150v1)) is expected. Less than 5 minute run time expected for each block.
   
 ![Sample visualization generated from intro.R](./intro/intro_sample.png)
   
@@ -81,7 +81,7 @@ processed_data <- preprocess_data("MP_TSS_hg38.tsv")
 tss_plot <- create_tss_plot(processed_data)
 print(tss_plot)
 ```
-A line plot of an average MP profile at TSS as in format of [**Fig. 2**](https://www.biorxiv.org/content/biorxiv/early/2026/03/30/2026.03.29.715150/F2.large.jpg) of study ([Lee et al., 2026](https://www.biorxiv.org/content/10.64898/2026.03.29.715150v1.full)) is expected. <5 min. runtime expected.
+A line plot of an average MP profile at transcription start site (TSS) as in format of [**Fig. 2**](https://www.biorxiv.org/content/biorxiv/early/2026/03/30/2026.03.29.715150/F2.large.jpg) of study ([Lee et al., 2026](https://www.biorxiv.org/content/10.64898/2026.03.29.715150v1.full)) is expected. <5 min. runtime expected.
 
 ![Sample visualization generated from plot_profile.R](./plot_profile/plot_profile_sample.png)
   
@@ -176,13 +176,13 @@ Start R session and declare function `plotMedian()` from script. Feed demo input
 ```
 plotMedian("medianMP_transcriptTSS_T2Thuman.tsv", -874, 948, "#000000", 170)
 ```
-A median MP profile with the promoter and core promoter size indicated as in [**Fig. 5f,g**](https://www.biorxiv.org/content/biorxiv/early/2026/03/30/2026.03.29.715150/F5.large.jpg) and [**Fig. 6**](https://www.biorxiv.org/content/biorxiv/early/2026/03/30/2026.03.29.715150/F6.large.jpg) of study ([Lee et al. 2026](https://www.biorxiv.org/content/10.64898/2026.03.29.715150v1)) is expected. <5 min. runtime expected.
+A line plot of MP profile at TSS with the promoter and core promoter size indicated as in [**Fig. 5f,g**](https://www.biorxiv.org/content/biorxiv/early/2026/03/30/2026.03.29.715150/F5.large.jpg) and [**Fig. 6**](https://www.biorxiv.org/content/biorxiv/early/2026/03/30/2026.03.29.715150/F6.large.jpg) of study ([Lee et al. 2026](https://www.biorxiv.org/content/10.64898/2026.03.29.715150v1)) is expected. <5 min. runtime expected.
 
 ![Sample visualization generated from plot_profile_promoter.R](./plot_profile_promoter/plot_profile_promoter_sample.png)
   
 
 ## Instructions for use
-A tab-delimited file summarizing median methylation probability (MP) values at every distance within ±10,000 bp of site of interest must be determined beforehand, most likely using [promoter_delineation_calculator.py](#8-promoter_delineation_calculatorpy), and provided as input. Run function via
+A tab-delimited file summarizing median methylation probability (MP) values at every distance within ±10,000 bp of site of interest must be provided. Promoter and core promoter sites for the species must be determined beforehand, most likely using [promoter_delineation_calculator.py](#8-promoter_delineation_calculatorpy), and provided as input. Run function via
 ```
 plotMedian("<Filename>", <Promoter_start>, <Promoter_end>, <Color(Hex)>, <Core_size>)
 ```
