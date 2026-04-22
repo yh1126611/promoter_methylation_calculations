@@ -57,6 +57,8 @@ e.g.
 df=read.table("Fig1b.tsv")
 ```
 and prompting the block. A visualization of figure in the format of **Fig. 1b-g** of paper ([Lee et al., 2026](https://www.biorxiv.org/content/10.64898/2026.03.29.715150v1)) is expected. Less than 5 minute run time expected for each block.
+  
+![Visualization generated from intro.R](./intro/intro_sample.png)
 ## Instructions for use
 Import your data via
 ```
