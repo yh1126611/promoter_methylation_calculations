@@ -139,23 +139,26 @@ plot_pvalue_heatmap(p_values_df, "<Your_title>")
 ## System requirement
 Runs on R. Tested on Rstudio/2025.09.2+418 “Cucumberleaf Sunflower” Release powered by R version 4.4.1. No non-standard hardware required.
 ## Installation guide
-No installation required.
+Package `ggplot2` must be installed in R prior to usage.
 ## Demo
-Start R session and declare function `plot_gene_mp()` from script. Import demo input found under [scatterplot_gene/scatterplot_sample.tsv](.scatterplot_gene/scatterplot_sample.tsv) via
+Start R session and declare function `plot_gene_mp()` from script. Import demo input found under [scatterplot_gene/scatterplot_sample.tsv](.scatterplot_gene/scatterplot_sample.tsv), which contains MPs of CpGs vicinal (±10,000 bp) to the *ACTB* gene on genomes of 63 species and their taxonomic class information, via
 ```
 df=read.table("scatterplot_sample.tsv")
 ```
-Run function via
+Run function by specifying the column that provides taxonomic class information (`Class`) and +1 class to visualize (`Mammalia`) via
 ```
 plot_gene_mp(df, "Class", c("Mammalia"))
 ```
-A scatterplot displaying MP of all CpG of mammals at TSS of gene ACTB, as an example, as in format of **Extended Data Fig. 7c** in study ([Lee et al. 2026](https://www.biorxiv.org/content/10.64898/2026.03.29.715150v1)) is expected. <5 min. runtime is expected.
+A scatterplot displaying MP of all CpG of mammals at TSS of gene *ACTB*, as an example, as in format of **Extended Data Fig. 7c** in study ([Lee et al. 2026](https://www.biorxiv.org/content/10.64898/2026.03.29.715150v1)) is expected. <5 min. runtime is expected.
+  
+![Sample visualization generated from scatterplot_gene.R](./scatterplot_gene/scatterplot_gene_sample.png)
+  
 ## Instructions for use
 Prepare a data frame format file with columns Distance, MP and Class indicating distance and MP of CpG and which class it belongs to, respectively. Run function indicating input file, the column indicating class information and which class you want to visualize i.e.
 ```
 plot_gene_mp(<Data_frame>, <Class_column_name>, <Class_of_interest>)
 ```
-Class must be one or more of: `Mammalia`, `Aves`, `Reptilia`, `Amphibia`, `Sarcopterygii`, `Actinopterygii` and `Chodrichthyes`.
+Class must be one or more of: `Mammalia`, `Aves`, `Reptilia`, `Amphibia`, `Sarcopterygii`, `Actinopterygii` and `Chodrichthyes`, concatenated by the `c()` function of R.
 
 # 8. promoter_delineation_calculator.R
 ## System requirement
@@ -165,7 +168,7 @@ Class must be one or more of: `Mammalia`, `Aves`, `Reptilia`, `Amphibia`, `Sarco
 
 # 9. [plot_profile_promoter.R](./plot_profile_promoter/plot_profile_promoter.R)
 ## System requirement
-Runs on R. Tested on Rstudio/2025.09.2+418 "Cucumberleaf Sunflower" Release powered by R version 4.4.1. No non-standard hardware required.
+Runs on R. Tested on Rstudio/2025.09.2+418 “Cucumberleaf Sunflower” Release powered by R version 4.4.1. No non-standard hardware required.
 ## Installation guide
 No installation required.
 ## Demo
