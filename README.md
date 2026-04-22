@@ -25,7 +25,7 @@ Find demo input under findseq/T2T-CHM13v2.0.fna (hs1 genome) and run via
 ```
 python3 findseq.py T2T-CHM13v2.0.fna CpG.bed CG
 ```
-Output should be locations of all occurrences of CpG (CG) on hs1 genome in BED format. <10 min. runtime is expected.
+Output should be locations of all occurrences of CpG (CG) on hs1 genome in BED format. <10 min. runtime expected.
 ## Instructions for use
 Find dinucleotide (or sequence motif of any length) via
 ```python3 findseq.py <Genome.fasta> <Out.bed> <Motif>```
@@ -38,7 +38,7 @@ No installation required. Grant execution permission by `chmod +x bed_2_tbtools.
 ## Demo
 Find demo input under bed_2_tbtools/CG.bed (All CpG sites of hs1 chromosome 1). Run script by
 ```python3 bed_2_tbtools.py```
-Enter input (`CG.bed`) and output (`CG.BINstat.tab.xls`) file names when prompted. A file summarizing the length of region occupied by the BED file in every 10,000 bp window of the genome is expected. 10 min. runtime expected.
+Enter input (`CG.bed`) and output (`CG.BINstat.tab.xls`) file names when prompted. A file summarizing the length of region occupied by the input BED file in every 10,000 bp window of the genome is expected. 10 min. runtime expected.
 ## Instructions for use
 Run script while inputting your BED file at prompt. The output is compatible as input for visualization as a circos plot track in [TBtools](https://github.com/CJ-Chen/TBtools-II) ([Chen et al., 2023](https://www.cell.com/molecular-plant/fulltext/S1674-2052(23)00281-2))
 
@@ -56,7 +56,7 @@ e.g.
 ```
 df=read.table("Fig1b.tsv")
 ```
-and prompting the block. A visualization of figure in the format of **Fig. 1b-g** of paper ([Lee et al., 2026](https://www.biorxiv.org/content/10.64898/2026.03.29.715150v1)) is expected. Less than 5 minute run time expected for each block.
+and prompting the block. A visualization of figure in the format of [**Fig. 1b-g**](https://www.biorxiv.org/content/biorxiv/early/2026/03/30/2026.03.29.715150/F1.large.jpg) of paper ([Lee et al., 2026](https://www.biorxiv.org/content/10.64898/2026.03.29.715150v1)) is expected. Less than 5 minute run time expected for each block.
   
 ![Sample visualization generated from intro.R](./intro/intro_sample.png)
   
@@ -81,7 +81,7 @@ processed_data <- preprocess_data("MP_TSS_hg38.tsv")
 tss_plot <- create_tss_plot(processed_data)
 print(tss_plot)
 ```
-A line plot of an average MP profile at TSS as in format of **Fig. 2** of study ([Lee et al., 2026](https://www.biorxiv.org/content/10.64898/2026.03.29.715150v1.full)) is expected. <5 min. runtime expected.
+A line plot of an average MP profile at TSS as in format of [**Fig. 2**](https://www.biorxiv.org/content/biorxiv/early/2026/03/30/2026.03.29.715150/F2.large.jpg) of study ([Lee et al., 2026](https://www.biorxiv.org/content/10.64898/2026.03.29.715150v1.full)) is expected. <5 min. runtime expected.
 
 ![Sample visualization generated from plot_profile.R](./plot_profile/plot_profile_sample.png)
   
@@ -124,7 +124,7 @@ Run function with input via
 ```
 plot_pvalue_heatmap(df, "P-value")
 ```
-A horizontally linear heatmap indicating p-value at each distance through color intensity as in **Fig. 2** of ([Lee et al. 2026](https://www.biorxiv.org/content/10.64898/2026.03.29.715150v1)) is expected. <5 min. runtime expected.
+A horizontally linear heatmap indicating p-value at each distance through color intensity as in [**Fig. 2**](https://www.biorxiv.org/content/biorxiv/early/2026/03/30/2026.03.29.715150/F2.large.jpg) of ([Lee et al. 2026](https://www.biorxiv.org/content/10.64898/2026.03.29.715150v1)) is expected. <5 min. runtime expected.
   
 ![Sample visualization generated from plot_profile.R](./visualize_tvd/visualize_tvd_sample.png)
   
@@ -149,7 +149,7 @@ Run function by specifying the column that provides taxonomic class information 
 ```
 plot_gene_mp(df, "Class", c("Mammalia"))
 ```
-A scatterplot displaying MP of all CpG of mammals at TSS of gene *ACTB*, as an example, as in format of **Extended Data Fig. 7c** in study ([Lee et al. 2026](https://www.biorxiv.org/content/10.64898/2026.03.29.715150v1)) is expected. <5 min. runtime is expected.
+A scatterplot displaying MP of all CpG of mammals at TSS of gene *ACTB*, as an example, as in format of [**Extended Data Fig. 7c**](https://www.biorxiv.org/content/biorxiv/early/2026/03/30/2026.03.29.715150/F13.large.jpg) in study ([Lee et al. 2026](https://www.biorxiv.org/content/10.64898/2026.03.29.715150v1)) is expected. <5 min. runtime is expected.
   
 ![Sample visualization generated from scatterplot_gene.R](./scatterplot_gene/scatterplot_gene_sample.png)
   
@@ -172,17 +172,17 @@ Runs on R. Tested on Rstudio/2025.09.2+418 “Cucumberleaf Sunflower” Release 
 ## Installation guide
 No installation required.
 ## Demo
-Start R session and declare function `plotMedian()` from script. Feed demo input found under [plot_profile_promoter/medianMP_transcriptTSS_T2Thuman.tsv](./plot_profile_promoter/medianMP_transcriptTSS_T2Thuman.tsv) (Median MP profile at TSS of hs1) to function while specifying promoter start (-874), end (948), desired line color (#000000) and core promoter length (170), all determined beforehand from calculations most likely using [promoter_delineation_calculator.py](#8-promoter_delineation_calculatorpy), by:
+Start R session and declare function `plotMedian()` from script. Feed demo input found under [plot_profile_promoter/medianMP_transcriptTSS_T2Thuman.tsv](./plot_profile_promoter/medianMP_transcriptTSS_T2Thuman.tsv) (Median MP profile at TSS of hs1) to function while specifying promoter start (-874), end (948), desired line color (#000000) and core promoter length (170) by:
 ```
 plotMedian("medianMP_transcriptTSS_T2Thuman.tsv", -874, 948, "#000000", 170)
 ```
-A median MP profile with the promoter and core promoter size indicated as in **Fig. 5f,g** and **Fig. 6** of study ([Lee et al. 2026](https://www.biorxiv.org/content/10.64898/2026.03.29.715150v1)) is expected. <5 min. runtime expected.
+A median MP profile with the promoter and core promoter size indicated as in [**Fig. 5f,g**](https://www.biorxiv.org/content/biorxiv/early/2026/03/30/2026.03.29.715150/F5.large.jpg) and [**Fig. 6**](https://www.biorxiv.org/content/biorxiv/early/2026/03/30/2026.03.29.715150/F6.large.jpg) of study ([Lee et al. 2026](https://www.biorxiv.org/content/10.64898/2026.03.29.715150v1)) is expected. <5 min. runtime expected.
 
 ![Sample visualization generated from plot_profile_promoter.R](./plot_profile_promoter/plot_profile_promoter_sample.png)
   
 
 ## Instructions for use
-A tab-delimited file summarizing median methylation probability (MP) values at every distance within ±10,000 bp of site of interest must be calculated beforehand and provided as input. Run function via
+A tab-delimited file summarizing median methylation probability (MP) values at every distance within ±10,000 bp of site of interest must be determined beforehand, most likely using [promoter_delineation_calculator.py](#8-promoter_delineation_calculatorpy), and provided as input. Run function via
 ```
 plotMedian("<Filename>", <Promoter_start>, <Promoter_end>, <Color(Hex)>, <Core_size>)
 ```
@@ -198,7 +198,7 @@ Start R session and precede running whole script by importing demo input found u
 ```
 df=read.table("comparison_sample.tsv")
 ```
-A scatterplot figure in the format of **Fig. 5h-j** of study ([Lee et al. 2026](https://www.biorxiv.org/content/10.64898/2026.03.29.715150v1)) is expected.
+A scatterplot figure in the format of [**Fig. 5h-j**](https://www.biorxiv.org/content/biorxiv/early/2026/03/30/2026.03.29.715150/F5.large.jpg) of study ([Lee et al. 2026](https://www.biorxiv.org/content/10.64898/2026.03.29.715150v1)) is expected.
 ## Instructions for use
 Organize your calculated promoter lengths for individual species beforehand into a data frame format with columns: `Class`, `Genome.size` and `Promoter.size`. Precede prompting of the script with input importing:
 ```
@@ -219,7 +219,7 @@ and conduct visualization via
 ```
 plot_UMAP(df, "Title", df$Class, class_color)
 ```
-A scatterplot summarizing UMAP components in a two-dimensional space as in the format of **Fig. 4** of study ([Lee et al. 2026](https://www.biorxiv.org/content/10.64898/2026.03.29.715150v1)) is expected.
+A scatterplot summarizing UMAP components in a two-dimensional space as in the format of [**Fig. 4**](https://www.biorxiv.org/content/biorxiv/early/2026/03/30/2026.03.29.715150/F4.large.jpg) of study ([Lee et al. 2026](https://www.biorxiv.org/content/10.64898/2026.03.29.715150v1)) is expected.
 
 ![Sample visualization generated from plot_umap.R](./plot_umap/plot_umap_sample.png)
   
