@@ -170,7 +170,7 @@ Class must be one or more of: `Mammalia`, `Aves`, `Reptilia`, `Amphibia`, `Sarco
 ## System requirement
 Runs on R. Tested on Rstudio/2025.09.2+418 “Cucumberleaf Sunflower” Release powered by R version 4.4.1. No non-standard hardware required.
 ## Installation guide
-No installation required.
+Package `ggplot2` must be installed in R prior to usage.
 ## Demo
 Start R session and declare function `plotMedian()` from script. Feed demo input found under [plot_profile_promoter/medianMP_transcriptTSS_T2Thuman.tsv](./plot_profile_promoter/medianMP_transcriptTSS_T2Thuman.tsv) (Median MP profile at TSS of hs1) to function while specifying promoter start (-874), end (948), desired line color (#000000) and core promoter length (170) by:
 ```
