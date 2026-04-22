@@ -48,7 +48,7 @@ Runs on R. Tested on Rstudio/2025.09.2+418 “Cucumberleaf Sunflower” Release 
 ## Installation guide
 Packages `data.table`, `dplyr`, `ggplot2` and `scales` must be installed in R.
 ## Demo
-Execute directly on R by blocks specified in the code, preferrably on Rstudio, by importing each input file uploaded under [intro](./intro) to R session as df or the variable name used in each block via
+Execute directly on R by blocks specified in the code, preferrably on Rstudio, by importing each input file ([Fig1b.tsv](./intro/Fig1b.tsv), [Fig1c.tsv](./intro/Fig1c.tsv), [Fig1d.tsv](./intro/Fig1d.tsv), [Fig1e.tsv](./intro/Fig1e.tsv), [Fig1fg.tsv](./intro/Fig1fg.tsv)) uploaded under [intro](./intro) to R session before execution of the associated code block as `df` via
 ```
 df=read.table("<Filename>")
 ```
@@ -59,6 +59,7 @@ df=read.table("Fig1b.tsv")
 and prompting the block. A visualization of figure in the format of **Fig. 1b-g** of paper ([Lee et al., 2026](https://www.biorxiv.org/content/10.64898/2026.03.29.715150v1)) is expected. Less than 5 minute run time expected for each block.
   
 ![Visualization generated from intro.R](./intro/intro_sample.png)
+  
 ## Instructions for use
 Import your data via
 ```
