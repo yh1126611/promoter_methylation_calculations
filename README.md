@@ -176,7 +176,11 @@ Start R session and declare function `plotMedian()` from script. Feed demo input
 ```
 plotMedian("medianMP_transcriptTSS_T2Thuman.tsv", -874, 948, "#000000", 170)
 ```
-A median MP profile with the promoter and core promoter size indicated as in **Fig. 5f,g** and **Fig. 6** of study ([Lee et al. 2026](https://www.biorxiv.org/content/10.64898/2026.03.29.715150v1)) is expected.
+A median MP profile with the promoter and core promoter size indicated as in **Fig. 5f,g** and **Fig. 6** of study ([Lee et al. 2026](https://www.biorxiv.org/content/10.64898/2026.03.29.715150v1)) is expected. <5 min. runtime expected.
+
+![Sample visualization generated from plot_profile_promoter.R](./plot_profile_promoter/plot_profile_promoter_sample.png)
+  
+
 ## Instructions for use
 A tab-delimited file summarizing median methylation probability (MP) values at every distance within ±10,000 bp of site of interest must be calculated beforehand and provided as input. Run function via
 ```
