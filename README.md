@@ -28,7 +28,9 @@ python3 findseq.py T2T-CHM13v2.0.fna CpG.bed CG
 Output should be locations of all occurrences of CpG (CG) on hs1 genome in BED format. <10 min. runtime expected.
 ## Instructions for use
 Find dinucleotide (or sequence motif of any length) via
-```python3 findseq.py <Genome.fasta> <Out.bed> <Motif>```
+```
+python3 findseq.py <Genome.fasta> <Out.bed> <Motif>
+```
 
 # 2. [bed_2_tbtools.py](./bed_2_tbtools/bed_2_tbtools.py)
 ## System requirement
@@ -38,9 +40,9 @@ No installation required. Grant execution permission by `chmod +x bed_2_tbtools.
 ## Demo
 Find demo input under bed_2_tbtools/CG.bed (All CpG sites of hs1 chromosome 1). Run script by
 ```python3 bed_2_tbtools.py```
-Enter input (`CG.bed`) and output (`CG.BINstat.tab.xls`) file names when prompted. A file summarizing the length of region occupied by the input BED file in every 10,000 bp window of the genome is expected. 10 min. runtime expected.
+Enter input (`CG.bed`) and output (`CG.BINstat.tab.xls`) file names when prompted. Expected output `CG.BINstat.tab.xls` is a tab-delimited file with every 10,000 bp (default) window of genome as row with the length (bp) of CpG in the window is expected. 10 min. runtime expected.
 ## Instructions for use
-Run script while inputting your BED file at prompt. The output is compatible as input for visualization as a circos plot track in [TBtools](https://github.com/CJ-Chen/TBtools-II) ([Chen et al., 2023](https://www.cell.com/molecular-plant/fulltext/S1674-2052(23)00281-2))
+Run script while inputting your BED file at prompt. The output is a file summarizing the length of region occupied by the input BED file in every 10,000 bp window of the genome, compatible as input for visualization as a circos plot track in [TBtools](https://github.com/CJ-Chen/TBtools-II) ([Chen et al., 2023](https://www.cell.com/molecular-plant/fulltext/S1674-2052(23)00281-2))
 
 # 3. [intro.R](./intro/intro.R)
 ## System requirement
@@ -56,7 +58,7 @@ e.g.
 ```
 df=read.table("Fig1b.tsv")
 ```
-and prompting the block. A visualization of figure in the format of [**Fig. 1b-g**](https://www.biorxiv.org/content/biorxiv/early/2026/03/30/2026.03.29.715150/F1.large.jpg) of srudy ([Lee et al., 2026](https://www.biorxiv.org/content/10.64898/2026.03.29.715150v1)) is expected. Less than 5 minute run time expected for each block.
+and prompting the block. A visualization of figure in the format of [**Fig. 1b-g**](https://www.biorxiv.org/content/biorxiv/early/2026/03/30/2026.03.29.715150/F1.large.jpg) of study ([Lee et al., 2026](https://www.biorxiv.org/content/10.64898/2026.03.29.715150v1)) is expected. Less than 5 minute run time expected for each block.
   
 ![Sample visualization generated from intro.R](./intro/intro_sample.png)
   
@@ -88,7 +90,7 @@ A line plot of an average MP profile at transcription start site (TSS) as in for
 ## Instructions for use
 Prepare a tab-delimited file with columns indicating information on **I.** Vicinal TSS ID, **II.** Distance from TSS, **III.** MP and **IV.** Strand (+/-) for every row corresponding to a CpG. Input the file through the aforementioned pipeline:
 ```
-processed_data <- preprocess_data("<Your_file.tsv>")
+processed_data <- preprocess_data("Your_file.tsv")
 tss_plot <- create_tss_plot(processed_data)
 print(tss_plot)
 ```
@@ -141,11 +143,11 @@ Runs on R. Tested on Rstudio/2025.09.2+418 “Cucumberleaf Sunflower” Release 
 ## Installation guide
 Package `ggplot2` must be installed in R prior to usage.
 ## Demo
-Start R session and declare function `plot_gene_mp()` from script. Import demo input found under [scatterplot_gene/scatterplot_sample.tsv](.scatterplot_gene/scatterplot_sample.tsv), which contains MPs of CpGs vicinal (±10,000 bp) to the *ACTB* gene on genomes of 63 species and their taxonomic class information, via
+Start R session and declare function `plot_gene_mp()` from script. Import demo input found under [scatterplot_gene/scatterplot_sample.tsv](.scatterplot_gene/scatterplot_sample.tsv), which contains MPs of CpGs vicinal (±10,000 bp) to the *ACTB* gene on genomes of 63 species and their taxonomic class information, by:
 ```
 df=read.table("scatterplot_sample.tsv")
 ```
-Run function by specifying the column that provides taxonomic class information (`Class`) and +1 class to visualize (`Mammalia`) via
+Run function by specifying the column that provides taxonomic class information (`Class`) and +1 class to visualize (`Mammalia`) by:
 ```
 plot_gene_mp(df, "Class", c("Mammalia"))
 ```
@@ -154,7 +156,9 @@ A scatterplot displaying MP of all CpG of mammals at TSS of gene *ACTB*, as an e
 ![Sample visualization generated from scatterplot_gene.R](./scatterplot_gene/scatterplot_gene_sample.png)
   
 ## Instructions for use
-Prepare a data frame format file with columns Distance, MP and Class indicating distance and MP of CpG and which class it belongs to, respectively. Run function indicating input file, the column indicating class information and which class you want to visualize i.e.
+Prepare a data frame format object in R with columns: `Distance`, `MP` and `Class`, indicating distance from site of interest (e.g. *ACTB* TSS in the case of demo data) and MP of CpG and which class it belongs to, respectively. Run function indicating input file, the column indicating class information and which class you want to visualize
+  
+i.e.
 ```
 plot_gene_mp(<Data_frame>, <Class_column_name>, <Class_of_interest>)
 ```
@@ -192,7 +196,7 @@ to visualize the median MP profile of species.
 ## System requirement
 Runs on R. Tested on Rstudio/2025.09.2+418 “Cucumberleaf Sunflower” Release powered by R version 4.4.1. No non-standard hardware required.
 ## Installation guide
-No installation required.
+Package `ggplot2` must be installed in R prior to usage.
 ## Demo
 Start R session and precede running whole script by importing demo input found under [plot_comparison/comparison_sample.tsv](./plot_comparison/comparison_sample.tsv) as `df` via
 ```
@@ -211,11 +215,11 @@ Runs on R. Tested on Rstudio/2025.09.2+418 "Cucumberleaf Sunflower" Release powe
 ## Installation guide
 Package `ggplot2` must be installed in R prior to usage.
 ## Demo
-Start R session and declare function `plot_UMAP()`. Import demo input found under [plot_umap/umap_sample.tsv](./plot_umap/umap_sample.tsv), which contains organic UMAP values from MP properties of 83 vertebrate species, via
+Start R session and declare function `plot_UMAP()`. Import demo input found under [plot_umap/umap_sample.tsv](./plot_umap/umap_sample.tsv), which contains organic UMAP values from MP properties of 83 vertebrate species, by:
 ```
 df=read.table("umap_sample.tsv")
 ```
-and conduct visualization via
+Invoke visualization by:
 ```
 plot_UMAP(df, "Title", df$Class, class_color)
 ```
@@ -224,7 +228,7 @@ A scatterplot summarizing UMAP components in a two-dimensional space as in the f
 ![Sample visualization generated from plot_umap.R](./plot_umap/plot_umap_sample.png)
   
 ## Instructions for use
-Organize UMAP result into a data frame format with columns `UMAP1` and `UMAP2` for the top two UMAP components. Specify column name containing information color coding (e.g. phylogenetic class or tissue type). Specify a vector defining color coding scheme. Run via
+Organize UMAP result into a data frame format with columns `UMAP1` and `UMAP2` for the top two UMAP components. Specify column name (`<Column_name>`) containing information for color coding (e.g. phylogenetic class or tissue type). Specify a vector defining color coding scheme. Run via
 ```
 plot_UMAP(<Data_frame>, <Title>, <Column_name>, <Color_coding_scheme>)
 ```
