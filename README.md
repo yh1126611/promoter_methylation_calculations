@@ -21,11 +21,16 @@ Runs on Python3. Tested on Python 3.8.10. No non-standard hardware required.
 ## Installation guide
 No installation required. Grant execution permission by `chmod +x findseq.py`
 ## Demo
-Find demo input under findseq/T2T-CHM13v2.0.fna (hs1 genome) and run via
+Any genome in FASTA format can suffice as input. For demo, the human [hs1 genome](https://www.ncbi.nlm.nih.gov/datasets/genome/GCF_009914755.1/) is recommended as it is the one also used  in the study ([Lee et al., 2026](https://www.biorxiv.org/content/10.64898/2026.03.29.715150v1)). [Download hs1 genome](https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/009/914/755/GCF_009914755.1_T2T-CHM13v2.0/GCF_009914755.1_T2T-CHM13v2.0_genomic.fna.gz) and unzip (`gzip`) by:
 ```
-python3 findseq.py T2T-CHM13v2.0.fna CpG.bed CG
+wget https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/009/914/755/GCF_009914755.1_T2T-CHM13v2.0/GCF_009914755.1_T2T-CHM13v2.0_genomic.fna.gz
+gzip -df GCF_009914755.1_T2T-CHM13v2.0/GCF_009914755.1_T2T-CHM13v2.0_genomic.fna.gz
 ```
-Output should be locations of all occurrences of CpG (CG) on hs1 genome in BED format. <10 min. runtime expected.
+Run script to find all CpG on hs1 by:
+```
+python3 findseq.py GCF_009914755.1_T2T-CHM13v2.0_genomic.fna CpG.bed CG
+```
+Output should be locations of all CpG (CG) occurrences on hs1 in BED format. <10 min. runtime expected for human or any average-sized genome.
 ## Instructions for use
 Find dinucleotide (or sequence motif of any length) via
 ```
