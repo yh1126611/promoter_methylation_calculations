@@ -106,7 +106,7 @@ Runs on R. Tested on Rstudio/2025.09.2+418 “Cucumberleaf Sunflower” Release 
 ## Installation guide
 Packages `data.table` must be installed in R prior to usage.
 ## Demo
-Declare function `compute_tvd_pvalues()` from script. Find inputs compute_tvd/MP_wg_hg38.tsv (MP of all CpGs on hg38 genome) and compute_tvd/MP_TSS_hg38.tsv (MP and distance from TSS for all TSS-vicinal (±10,000 bp) CpGs on hg38). Run function by:
+Declare function `compute_tvd_pvalues()` from script. Download demo inputs found at compute_tvd/MP_wg_hg38.tsv (MP of all CpGs on hg38) and compute_tvd/MP_TSS_hg38.tsv (MP and distance from TSS for all TSS-vicinal (±10,000 bp) CpGs on hg38). Note that this file is discrepant from the authentic data used in study ([Lee et al., 2026](https://www.biorxiv.org/content/10.64898/2026.03.29.715150v1)) as it was significantly downsized for upload compatibility in this page and thus is only suitable for demonstration purposes. Run function by:
 ```
 compute_tvd_pvalues("MP_wg_hg38.tsv", "MP_TSS_hg38_tsv")
 ```
@@ -131,7 +131,7 @@ Run function with input by:
 ```
 plot_pvalue_heatmap(df, "P-value")
 ```
-A horizontally linear heatmap indicating p-value at each distance through color intensity as in [**Fig. 2**](https://www.biorxiv.org/content/biorxiv/early/2026/03/30/2026.03.29.715150/F2.large.jpg) of ([Lee et al., 2026](https://www.biorxiv.org/content/10.64898/2026.03.29.715150v1)) is expected. <5 min. runtime expected.
+A horizontally linear heatmap indicating p-value at each distance through color intensity as in [**Fig. 2**](https://www.biorxiv.org/content/biorxiv/early/2026/03/30/2026.03.29.715150/F2.large.jpg) of study ([Lee et al., 2026](https://www.biorxiv.org/content/10.64898/2026.03.29.715150v1)) is expected. <5 min. runtime expected.
   
 ![Sample visualization generated from plot_profile.R](./visualize_tvd/visualize_tvd_sample.png)
   
