@@ -30,9 +30,9 @@ Run script to find all CpG on hs1 by:
 ```
 python3 findseq.py GCF_009914755.1_T2T-CHM13v2.0_genomic.fna CpG.bed CG
 ```
-Output should be locations of all CpG (CG) occurrences on hs1 in BED format. <10 min. runtime expected for human or any average-sized genome.
+Locations of all CpG (CG) occurrences on hs1 in BED format is expected as output. <10 min. runtime expected for human or any average-sized genome.
 ## Instructions for use
-Find dinucleotide (or sequence motif of any length) via
+Find dinucleotide (or sequence motif of any length) by:
 ```
 python3 findseq.py <Genome.fasta> <Out.bed> <Motif>
 ```
@@ -43,7 +43,7 @@ Runs on Python3. Tested on Python 3.12.8. No non-standard hardware required.
 ## Installation guide
 No installation required. Grant execution permission by `chmod +x bed_2_tbtools.py`
 ## Demo
-Find demo input under bed_2_tbtools/CG.bed (All CpG sites of hs1 chromosome 1). Run script by
+Find demo input under bed_2_tbtools/CG.bed (All CpG sites of hs1 chromosome 1). Run script by:
 ```python3 bed_2_tbtools.py```
 Enter input (`CG.bed`) and output (`CG.BINstat.tab.xls`) file names when prompted. Expected output `CG.BINstat.tab.xls` is a tab-delimited file with every 10,000 bp (default) window of genome as row with the length (bp) of CpG in the window is expected. 10 min. runtime expected.
 ## Instructions for use
@@ -226,7 +226,7 @@ df=read.table("umap_sample.tsv")
 ```
 Invoke visualization by:
 ```
-plot_UMAP(df, "Title", df$Class, class_color)
+plot_UMAP(df, "Your title", df$Class, class_color)
 ```
 A scatterplot summarizing UMAP components in a two-dimensional space as in the format of [**Fig. 4**](https://www.biorxiv.org/content/biorxiv/early/2026/03/30/2026.03.29.715150/F4.large.jpg) of study ([Lee et al. 2026](https://www.biorxiv.org/content/10.64898/2026.03.29.715150v1)) is expected.
 
