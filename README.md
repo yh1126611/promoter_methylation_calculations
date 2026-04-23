@@ -55,11 +55,16 @@ Runs on R. Tested on Rstudio/2025.09.2+418 “Cucumberleaf Sunflower” Release 
 ## Installation guide
 Packages `data.table`, `dplyr`, `ggplot2` and `scales` must be installed in R prior to usage.
 ## Demo
-Execute directly on R, preferrably on Rstudio, in blocks specified in the code by importing each input file uploaded under [intro](./intro) ([Fig1b.tsv](./intro/Fig1b.tsv), [Fig1c.tsv](./intro/Fig1c.tsv), [Fig1d.tsv](./intro/Fig1d.tsv), [Fig1e.tsv](./intro/Fig1e.tsv), [Fig1fg.tsv](./intro/Fig1fg.tsv)) to session before the associated code block as `df` by:
+R script [intro.R](./intro/intro.R) is separated in blocks corresponding to each panel of [**Fig. 1b-g**](https://www.biorxiv.org/content/biorxiv/early/2026/03/30/2026.03.29.715150/F1.large.jpg) of study ([Lee et al., 2026](https://www.biorxiv.org/content/10.64898/2026.03.29.715150v1)). A demo input for each panel can be found under [intro](./intro). Refer to method section of study ([Lee et al., 2026](https://www.biorxiv.org/content/10.64898/2026.03.29.715150v1)) for a series of analyses and data preprocessing to acquire demo input. Note that some input has been significantly downsampled for upload purposes and are thus different from the authentic data used in study.
+Execute directly on R in blocks, preferrably on Rstudio, by importing each input file uploaded under [Fig1b.tsv](./intro/Fig1b.tsv), [Fig1c.tsv](./intro/Fig1c.tsv), [Fig1d.tsv](./intro/Fig1d.tsv), [Fig1e.tsv](./intro/Fig1e.tsv) and [Fig1fg.tsv](./intro/Fig1fg.tsv) to session before the associated code block as `df` and prompting the block.
+
+e.g. Import [Fig1b.tsv](./intro/Fig1b.tsv):
 ```
 df=read.table("Fig1b.tsv", header=T)
 ```
-and prompting the block. A visualization of figure in the format of [**Fig. 1b-g**](https://www.biorxiv.org/content/biorxiv/early/2026/03/30/2026.03.29.715150/F1.large.jpg) of study ([Lee et al., 2026](https://www.biorxiv.org/content/10.64898/2026.03.29.715150v1)) is expected. Less than 5 minute run time expected for each block.
+and run the block indicated as `# Fig. 1b` in script.
+  
+A visualization of figure in the format of [**Fig. 1b-g**](https://www.biorxiv.org/content/biorxiv/early/2026/03/30/2026.03.29.715150/F1.large.jpg) of study ([Lee et al., 2026](https://www.biorxiv.org/content/10.64898/2026.03.29.715150v1)) is expected. Less than 5 minute run time expected for each block.
   
 ![Sample visualization generated from intro.R](./intro/intro_sample.png)
   
