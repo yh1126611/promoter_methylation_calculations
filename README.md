@@ -220,11 +220,11 @@ Runs on R. Tested on Rstudio/2025.09.2+418 "Cucumberleaf Sunflower" Release powe
 ## Installation guide
 Package `ggplot2` must be installed in R prior to usage.
 ## Demo
-Start R session and declare function `plot_UMAP()` from script. Import demo input found under [plot_umap/umap_sample.tsv](./plot_umap/umap_sample.tsv), which contains organic UMAP component values from MP properties of 83 vertebrate species in an R data frame format, by:
+UMAP values in demo data were generated using function `umap()` from R package [uwot](https://github.com/jlmelville/uwot). Subsequently, the data frame was preprocessed to include taxonomic class information of species in the column `Class`. Start R session and declare function `plot_UMAP()` from script. Import demo input found under [plot_umap/umap_sample.tsv](./plot_umap/umap_sample.tsv), which contains organic UMAP component values from MP properties of 83 vertebrate species in an R data frame format, by:
 ```
 df=read.table("umap_sample.tsv", header=T)
 ```
-UMAP values in demo data were generated using function `umap()` from R package [uwot](https://github.com/jlmelville/uwot). Subsequently, the data frame was preprocessed to include taxonomic class information of species in the column `Class`. Invoke visualization, using the color coding scheme provided as an R vector object in the script (`class_color`), by:
+Invoke visualization, using the color coding scheme provided as an R vector object in the script (`class_color`), by:
 ```
 plot_UMAP(df, "Your title", df$Class, class_color)
 ```
