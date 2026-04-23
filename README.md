@@ -50,7 +50,7 @@ Runs on R. Tested on Rstudio/2025.09.2+418 “Cucumberleaf Sunflower” Release 
 ## Installation guide
 Packages `data.table`, `dplyr`, `ggplot2` and `scales` must be installed in R prior to usage.
 ## Demo
-Execute directly on R by blocks specified in the code, preferrably on Rstudio, by importing each input file ([Fig1b.tsv](./intro/Fig1b.tsv), [Fig1c.tsv](./intro/Fig1c.tsv), [Fig1d.tsv](./intro/Fig1d.tsv), [Fig1e.tsv](./intro/Fig1e.tsv), [Fig1fg.tsv](./intro/Fig1fg.tsv)) uploaded under [intro](./intro) to R session before execution of the associated code block as `df` via
+Execute directly on R by blocks specified in the code, preferrably on Rstudio, by importing each input file uploaded under [intro](./intro) ([Fig1b.tsv](./intro/Fig1b.tsv), [Fig1c.tsv](./intro/Fig1c.tsv), [Fig1d.tsv](./intro/Fig1d.tsv), [Fig1e.tsv](./intro/Fig1e.tsv), [Fig1fg.tsv](./intro/Fig1fg.tsv)) to R session before execution of the associated code block as `df` by:
 ```
 df=read.table("<Filename>")
 ```
@@ -63,7 +63,7 @@ and prompting the block. A visualization of figure in the format of [**Fig. 1b-g
 ![Sample visualization generated from intro.R](./intro/intro_sample.png)
   
 ## Instructions for use
-Import your data via
+Import your data by:
 ```
 df=read.table("<Filename>")
 ```
@@ -75,7 +75,7 @@ Runs on R. Tested on Rstudio/2025.09.2+418 “Cucumberleaf Sunflower” Release 
 ## Installation guide
 Packages `data.table`, `dplyr` and `ggplot2` must be installed in R prior to usage.
 ## Demo
-Declare functions `preprocess_data()` and `create_tss_plot()` from script. Pipe the demo input found under [plot_profile/MP_TSS_hg38.tsv](./plot_profile/MP_TSS_hg38.tsv) through functions: **I.** `preprocess_data()`, **II.** `create_tss_plot()` and **III.** print output
+Declare functions `preprocess_data()` and `create_tss_plot()` from script. Pipe the demo input found under [plot_profile/MP_TSS_hg38.tsv](./plot_profile/MP_TSS_hg38.tsv) through functions: **I.** `preprocess_data()`, **II.** `create_tss_plot()` and **III.** print output.
   
 e.g.
 ```
@@ -101,13 +101,13 @@ Runs on R. Tested on Rstudio/2025.09.2+418 “Cucumberleaf Sunflower” Release 
 ## Installation guide
 Packages `data.table` must be installed in R prior to usage.
 ## Demo
-Declare function `compute_tvd_pvalues()` from script. Find inputs compute_tvd/MP_wg_hg38.tsv (MP of all CpGs on hg38 genome) and compute_tvd/MP_TSS_hg38.tsv (MP and distance from TSS for all TSS-vicinal (±10,000 bp) CpGs on hg38). Run function via
+Declare function `compute_tvd_pvalues()` from script. Find inputs compute_tvd/MP_wg_hg38.tsv (MP of all CpGs on hg38 genome) and compute_tvd/MP_TSS_hg38.tsv (MP and distance from TSS for all TSS-vicinal (±10,000 bp) CpGs on hg38). Run function by:
 ```
 compute_tvd_pvalues("MP_wg_hg38.tsv", "MP_TSS_hg38_tsv")
 ```
 A data frame comprising information on p-value at every distance point is expected. 30 hour runtime is expected.
 ## Instructions for use
-Prepare two tab-delimited files: 1. Population (`wg_file`; whole-genome) and 2. sample (`element_file`; region of interest e.g. TSS vicinity). The population file must comprise rows corresponding to every CpG on genome and contain a column with MP information (column 4 by default). The sample file must comprise rows corresponding to CpG inside the region of interest and contain a column with distance, MP and strand information (columns 2, 3 and 4, respectively, by default). Run function via
+Prepare two tab-delimited files: 1. Population (`wg_file`; whole-genome) and 2. sample (`element_file`; region of interest e.g. TSS vicinity). The population file must comprise rows corresponding to every CpG on genome and contain a column with MP information (column 4 by default). The sample file must comprise rows corresponding to CpG inside the region of interest and contain a column with distance, MP and strand information (columns 2, 3 and 4, respectively, by default). Run function by:
 ```
 compute_tvd_pvalues("<population_file>", "<sample_file>")
 ```
@@ -118,7 +118,7 @@ Runs on R. Tested on Rstudio/2025.09.2+418 “Cucumberleaf Sunflower” Release 
 ## Installation guide
 No installation required.
 ## Demo
-Start R session and declare function `plot_pvalue_heatmap()` from script. Import demo input found at [visualize_tvd/pvalues_TSS_hg38.tsv](./visualize_tvd/pvalues_TSS_hg38.tsv) to variable `p_values_df` via
+Start R session and declare function `plot_pvalue_heatmap()` from script. Import demo input found at [visualize_tvd/pvalues_TSS_hg38.tsv](./visualize_tvd/pvalues_TSS_hg38.tsv) to variable `p_values_df` by:
 ```
 p_values_df=read.table("pvalues_TSS_hg38.tsv")
 ```
@@ -131,7 +131,7 @@ A horizontally linear heatmap indicating p-value at each distance through color 
 ![Sample visualization generated from plot_profile.R](./visualize_tvd/visualize_tvd_sample.png)
   
 ## Instructions for use
-Prepare a data frame format file with two columns denoting distance from a site of interest and p-value at the distance, most likely an output from [compute_tvd.R](#5-compute_tvdR). Run function via
+Prepare a data frame format file with two columns denoting distance from a site of interest and p-value at the distance, most likely an output from [compute_tvd.R](#5-compute_tvdR). Run function by:
 ```
 p_values_df=read.table("<Your_file.tsv>")
 plot_pvalue_heatmap(p_values_df, "<Your_title>")
