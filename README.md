@@ -176,9 +176,19 @@ Class must be one or more of: `Mammalia`, `Aves`, `Reptilia`, `Amphibia`, `Sarco
 
 # 8. [promoter_delineation_calculator.py](./promoter_delineation_calculator/promoter_delineation_calculator.py)
 ## System requirement
+Runs on Python3. Tested on Python 3.12.8. No non-standard hardware required.
 ## Installation guide
+No installation required. Grant execution permission by `chmod +x promoter_delineation_calculator.py`
 ## Demo
+Information on median MP value at distances ±10,000 bp from TSS for hs1 genome is provided as demo input [promoter_delineation_calculator/medians_hs1.txt](./promoter_delineation_calculator/medians_hs1.txt). Run by:
+```
+python3 promoter_delineation_calculator.py medians_hs1.txt
+```
 ## Instructions for use
+A tab-delimited file specifying median MP of a genome from certain distance at every base-unit distances within ±10,000 bp must be provided as input. A pre-determined <ins>core</ins> promoter size may be provided as an optional argument, which will set the program to only consider promoter delineations that enclose the core promoter.
+```
+python3 promoter_delineation_calculator.py <Median_file.txt> <Core_size(Opt'l)>
+```
 
 # 9. [plot_profile_promoter.R](./plot_profile_promoter/plot_profile_promoter.R)
 ## System requirement
