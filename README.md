@@ -123,11 +123,11 @@ Runs on R. Tested on Rstudio/2025.09.2+418 “Cucumberleaf Sunflower” Release 
 ## Installation guide
 No installation required.
 ## Demo
-Start R session and declare function `plot_pvalue_heatmap()` from script. Import demo input found at [visualize_tvd/pvalues_TSS_hg38.tsv](./visualize_tvd/pvalues_TSS_hg38.tsv) to variable `p_values_df` by:
+Demo input [pvalues_TSS_hg38.tsv](./visualize_tvd/pvalues_TSS_hg38.tsv) was generated from [compute_tvd](#5-compute_tvdR) process and contains p-values at each base-unit in distances from TSS in the ±10,000 interval. Start R session and declare function `plot_pvalue_heatmap()` from script. Import demo input found at [visualize_tvd/pvalues_TSS_hg38.tsv](./visualize_tvd/pvalues_TSS_hg38.tsv) to variable `p_values_df` by:
 ```
 p_values_df=read.table("pvalues_TSS_hg38.tsv")
 ```
-Run function with input via
+Run function with input by:
 ```
 plot_pvalue_heatmap(df, "P-value")
 ```
