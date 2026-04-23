@@ -143,7 +143,7 @@ Runs on R. Tested on Rstudio/2025.09.2+418 “Cucumberleaf Sunflower” Release 
 ## Installation guide
 Package `ggplot2` must be installed in R prior to usage.
 ## Demo
-Start R session and declare function `plot_gene_mp()` from script. Import demo input found under [scatterplot_gene/scatterplot_sample.tsv](.scatterplot_gene/scatterplot_sample.tsv), which contains MPs of CpGs vicinal (±10,000 bp) to the *ACTB* gene on genomes of 63 species and their taxonomic class information, by:
+Start R session and declare function `plot_gene_mp()` from script. Import demo input found under [scatterplot_gene/scatterplot_sample.tsv](./scatterplot_gene/scatterplot_sample.tsv), which contains MPs of CpGs vicinal (±10,000 bp) to the *ACTB* gene on genomes of 63 species and their taxonomic class information, by:
 ```
 df=read.table("scatterplot_sample.tsv")
 ```
