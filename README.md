@@ -184,6 +184,7 @@ Information on median MP value at distances ±10,000 bp from TSS for hs1 genome 
 ```
 python3 promoter_delineation_calculator.py medians_hs1.txt
 ```
+A tab-delimited file (`promoter_delineations.tsv`) with promoter delineation points in distance from the TSS (columns 1 (start) and 2 (end)) expected as output. 1 hr. runtime expected.
 ## Instructions for use
 A tab-delimited file specifying median MP of a genome from certain distance at every base-unit distances within ±10,000 bp must be provided as input. A pre-determined <ins>core</ins> promoter size may be provided as an optional argument, which will set the program to only consider promoter delineations that enclose the core promoter.
 ```
